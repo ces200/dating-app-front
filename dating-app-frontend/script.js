@@ -1,6 +1,7 @@
 document.getElementById('registerForm').addEventListener('submit', async (event) => {
     event.preventDefault(); // 폼 제출 시 페이지 새로고침 방지
   
+    const API_URL = 'https://script.google.com/macros/s/AKfycbx15_vQxgaMVfr7G2Q9eKTP6cAiCtxgvJJsCVVBpzq3wHL2BDbI2kzvymUlaBg0GdkPJg/exec';
     // 사용자가 입력한 데이터 가져오기
     const photos = document.getElementById('photos').files;
     const gender = document.getElementById('gender').value;
@@ -17,7 +18,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
     }
   
     // Google Apps Script API 호출
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxTMPgDATnAbEZBpK7aDdrqvVNrXWZ2R4IAhV3VRq0Ca9_vy3k7OsU0VLLSbGZ6-A0NbA/exec', {
+    const response = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -37,7 +38,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
   });
   
   async function loadUsers() {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxTMPgDATnAbEZBpK7aDdrqvVNrXWZ2R4IAhV3VRq0Ca9_vy3k7OsU0VLLSbGZ6-A0NbA/exec');
+    const response = await fetch(API_URL);
     const users = await response.json();
   
     const userList = document.getElementById('userList');
@@ -56,7 +57,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
   }
   
   async function markAsSold(rowIndex) {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxTMPgDATnAbEZBpK7aDdrqvVNrXWZ2R4IAhV3VRq0Ca9_vy3k7OsU0VLLSbGZ6-A0NbA/exec', {
+    const response = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: 'update', rowIndex })
