@@ -1,11 +1,87 @@
+/* 기본 스타일 */
 body {
-    font-family: Arial, sans-serif;
-  }
-  nav {
-    background-color: #f4f4f4;
-    padding: 10px;
-  }
-  button {
-    margin-right: 10px;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
   }
   
+  /* 상단 네비게이션 바 */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #ff7e36; /* 당근마켓 색상 */
+    color: white;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .nav-btn {
+    background-color: white;
+    color: #ff7e36;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .nav-btn:hover {
+    background-color: #ffe3d3; /* 버튼 호버 색상 */
+  }
+  
+  /* 페이지 컨테이너 */
+  .page {
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* 폼 스타일 */
+  .form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form input,
+  .form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .submit-btn {
+    background-color: #ff7e36;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #e66b2c; /* 버튼 호버 색상 */
+  }
+  
+  /* 조회 페이지 스타일 */
+  .user-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .user-card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+  
+  .user-card img {
+    width: calc(100%);
+  }
+  
+  .user-card p {
+   margin-top :0.
+  }
