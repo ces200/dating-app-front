@@ -17,7 +17,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
     }
   
     // Google Apps Script API 호출
-    const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxcXPQCE063urk97IN_IAUNw_77GkJ7lSIHN3HRfeuPa4VAZpOSQfwYcxvEdVCZBt9znA/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -37,7 +37,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
   });
   
   async function loadUsers() {
-    const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec');
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxcXPQCE063urk97IN_IAUNw_77GkJ7lSIHN3HRfeuPa4VAZpOSQfwYcxvEdVCZBt9znA/exec');
     const users = await response.json();
   
     const userList = document.getElementById('userList');
@@ -56,7 +56,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
   }
   
   async function markAsSold(rowIndex) {
-    const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxcXPQCE063urk97IN_IAUNw_77GkJ7lSIHN3HRfeuPa4VAZpOSQfwYcxvEdVCZBt9znA/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: 'update', rowIndex })
