@@ -1,7 +1,8 @@
+const API_URL = 'https://script.google.com/macros/s/AKfycbx15_vQxgaMVfr7G2Q9eKTP6cAiCtxgvJJsCVVBpzq3wHL2BDbI2kzvymUlaBg0GdkPJg/exec';
 document.getElementById('registerForm').addEventListener('submit', async (event) => {
     event.preventDefault(); // 폼 제출 시 페이지 새로고침 방지
   
-    const API_URL = 'https://script.google.com/macros/s/AKfycbx15_vQxgaMVfr7G2Q9eKTP6cAiCtxgvJJsCVVBpzq3wHL2BDbI2kzvymUlaBg0GdkPJg/exec';
+    
     // 사용자가 입력한 데이터 가져오기
     const photos = document.getElementById('photos').files;
     const gender = document.getElementById('gender').value;
