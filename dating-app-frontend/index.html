@@ -4,15 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>소개팅 서비스</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background-color: #f4f4f4;
+      padding: 10px;
+      display: flex;
+      justify-content: space-around;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .hidden {
+      display: none;
+    }
+    .user-card {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    .user-card img {
+      max-width: 100px;
+      max-height: 100px;
+      object-fit: cover;
+    }
+    .sold-out {
+      filter: blur(5px);
+      opacity: 0.5;
+    }
+  </style>
 </head>
 <body>
+  <!-- 상단 메뉴 -->
   <nav>
-    <button id="registerPage">등록</button>
-    <button id="viewPage">조회</button>
+    <button id="showRegister">등록 페이지</button>
+    <button id="showView">조회 페이지</button>
   </nav>
-  <main id="content"></main>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- 등록 페이지 -->
+  <div id="registerPage">
+    <h1>등록 페이지</h1>
+    <form id="registerForm">
+      <label for="photos">사진 (최대 5장):</label><br>
+      <input type="file" id="photos" multiple accept="image/*"><br><br>
+
+      <label for="gender">성별:</label><br>
+      <input type="text" id="gender" placeholder="성별"><br><br>
+
+      <label for="birthYear">출생년도:</label><br>
+      <input type="number" id="birthYear" placeholder="출생년도"><br><br>
+
+      <label for="location">거주지:</label><br>
+      <input type="text" id="location" placeholder="거주지"><br><br>
+
+      <label for="job">직업:</label><br>
+      <input type="text" id="job" placeholder="직업"><br><br>
+
+      <label for="hobby">취미:</label><br>
+      <input type="text" id="hobby" placeholder="취미"><br><br>
+
+      <label for="other">기타 정보:</label><br>
+      <textarea id="other" placeholder="기타 정보"></textarea><br><br>
+
+      <button type="submit">등록</button>
+    </form>
+  </div>
+
+  <!-- 조회 페이지 -->
+  <div id="viewPage" class="hidden">
+    <h1>조회 페이지</h1>
+    <div id="userList"></div>
+  </div>
